@@ -91,7 +91,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-/* 2 ----------  sección   ---------- */
 const scrollRevealInstance = ScrollReveal({
     duration: 1500,
     distance: '100px',
@@ -140,6 +139,32 @@ scrollRevealInstance.reveal('.card h1, .card p, .join', {
     scale: 1.1,
     interval: 200
 });
+
+// Incluye ScrollReveal
+ScrollReveal().reveal('.card-plan', {
+    duration: 800,
+    distance: '50px',
+    easing: 'ease-out',
+    origin: 'bottom',
+    interval: 100,
+});
+
+// Agrega funcionalidad de hover con JavaScript (opcional, si quieres hacerlo sin CSS hover)
+const cards = document.querySelectorAll('.card-plan');
+
+cards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'rotateY(10deg) scale(1.05)';
+        card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.2)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateY(0deg) scale(1)';
+        card.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
+    });
+});
+
+
 
 
 
